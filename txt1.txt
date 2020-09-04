@@ -1,0 +1,18 @@
+create table tt1(usn integer primary key,name varchar(10),phno integer,Branch varchar(5));
+insert into tt1 values(100,'abc',99459,'CS');
+insert into tt1 values(200,'agf',77427,'EC');
+insert into tt1 values(202,'ahs',78258,'ME');
+insert into tt1 values(401,'aaa',85555,'IS');
+insert into tt1 values(205,'qrt',98878,'CS');
+
+
+select * from tt1;
+
+Results
+usn	name	phno	Branch
+100	abc	99459	CS
+200	agf	77427	EC
+202	ahs	78258	ME
+205	qrt	98878	CS
+401	aaa	85555	IS
+
