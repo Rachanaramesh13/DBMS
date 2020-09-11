@@ -12,12 +12,12 @@ select *from BOOK ;
 
 Results:
 book_id     title	  Publisher_name        pub_year
-1000        abc       	xxx           	    2000
-1001	      bcd	        xxy          	      2005
-1002	      cde	        xyy                 2014
-1003	      def	        yyy	                2019
-1004	      efg	        yyz              	  1999
-1005	      bcd	        yzz	                2016
+1000          abc       	xxx           	  2000
+1001	      bcd	        xxy               2005
+1002	      cde	        xyy               2014
+1003	      def	        yyy	          2019
+1004	      efg	        yyz           	  1999
+1005	      bcd	        yzz	          2016
 
 query2:-
 select book_id from BOOK ;
@@ -36,4 +36,4 @@ select * from BOOK where book_id=1003 ;
 
 Results:
 book_id	     title 	   Publisher_name  	pub_year
-1003	        def	        yyy	            2019
+1003	      def	        yyy	          2019
