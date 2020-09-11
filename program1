@@ -1,0 +1,39 @@
+create table BOOK(book_id integer primary key,title varchar(20),Publisher_name varchar(20),pub_year varchar(20));
+insert into BOOK values(1000,'abc','xxx','2000');    
+insert into BOOK values(1001,'bcd','xxy','2005');
+insert into BOOK values(1002,'cde','xyy','2014');
+insert into BOOK values(1003,'def','yyy','2019');                         
+insert into BOOK values(1004,'efg','yyz','1999');     
+insert into BOOK values(1005,'bcd','yzz','2016');                                                                                                           
+create table BOOK_copies(book_id integer,branch_id integer,no_of_copies integer,primary key (book_id,branch_id));  
+
+query1:-
+select *from BOOK ;
+
+Results:
+book_id	 title	Publisher_name	pub_year
+1000   	 abc      	xxx          	2000
+1001	   bcd	      xxy          	2005
+1002	   cde	      xyy           2014
+1003	   def	      yyy	          2019
+1004	   efg	      yyz          	1999
+1005	   bcd	      yzz	          2016
+
+query2:-
+select book_id from BOOK ;
+
+Results:
+book_id
+1000
+1001
+1002
+1003
+1004
+1005
+
+query3:-
+select * from BOOK where book_id=1003 ;
+
+Results:
+book_id	  title 	Publisher_name	pub_year
+1003	     def	     yyy	         2019
