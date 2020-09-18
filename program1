@@ -1,39 +1,7 @@
-create table BOOK(book_id integer primary key,title varchar(20),Publisher_name varchar(20),pub_year varchar(20));
-insert into BOOK values(1000,'abc','xxx','2000');    
-insert into BOOK values(1001,'bcd','xxy','2005');
-insert into BOOK values(1002,'cde','xyy','2014');
-insert into BOOK values(1003,'def','yyy','2019');                         
-insert into BOOK values(1004,'efg','yyz','1999');     
-insert into BOOK values(1005,'bcd','yzz','2016');                                                                                                           
-create table BOOK_copies(book_id integer,branch_id integer,no_of_copies integer,primary key (book_id,branch_id));  
-
-query1:-
-select *from BOOK ;
-
-Results:
-book_id     title	  Publisher_name        pub_year
-1000          abc       	xxx           	  2000
-1001	      bcd	        xxy               2005
-1002	      cde	        xyy               2014
-1003	      def	        yyy	          2019
-1004	      efg	        yyz           	  1999
-1005	      bcd	        yzz	          2016
-
-query2:-
-select book_id from BOOK ;
-
-Results:
-book_id
-1000
-1001
-1002
-1003
-1004
-1005
-
-query3:-
-select * from BOOK where book_id=1003 ;
-
-Results:
-book_id	     title 	   Publisher_name  	pub_year
-1003	      def	        yyy	          2019
+create table PUBLISHER(Name varchar(20),Address varchar(40),Phone integer,primary key(Name));
+create table BOOK(Book_id integer,Title varchar(30),Publisher_name varchar(20),Pub_year integer,primary key(Book_id),foreign key(Publisher_name)references PUBLISHER(name));  
+create table BOOK_AUTHORS(Book_id integer,Author_name varchar(20),primary key(Book_id),foreign key(Book_id) references BOOK(Book_id));
+create table LIBRARY_BRANCH(Branch_id integer,Branch_name varchar(20),Addrerss varchar(30),primary key(Branch_id));
+create table BOOK_COPIES(Book_id integer,Branch_id integer,No_of_copies integer,primary key(Book_id,Branch_id),foreign key(Book_id)references BOOK(Book_id),foreign key(Branch_id)references LIBRARY_BRANCH(Branch_id));
+create table BOOK_LENDING(Book_id integer,Branch_id integer,Card_no integer,Date_out integer,Due_date integer,primary key(Book_id,Branch_id,Card_no),foreign key(Book_id)references BOOK(Book_id),
+foreign key(Branch_id)references LIBRARY_BRANCH(Branch_id));                          
