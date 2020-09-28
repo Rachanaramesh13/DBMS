@@ -1,0 +1,35 @@
+create table STUDENT(ssn integer,name varchar(10),major varchar(10),Bdate date,primary key(ssn));
+create table COURSE(course_id integer,cname varchar(20),Dept varchar(20),primary key(course_id));
+create table TEXT_BOOK(book_ISBN integer,book_title varchar(20),publisher varchar(20),author varchar(20),primary key(book_ISBN));
+create table BOOK_ADOPTION(course_id integer, quarter integer, book_ISBN integer,primary key(quarter),foreign key(course_id) references COURSE(course_id),foreign key(book_ISBN) references TEXT_BOOK(book_ISBN));
+create table ENROLL(ssn integer,course_id integer,quarter integer,grade varchar(5),primary key(ssn,course_id,quarter),foreign key(ssn) references STUDENT(ssn),foreign key(course_id) references COURSE(course_id),foreign key(quarter) references BOOK_ADOPTION(quarter));            
+
+insert into STUDENT values(501,'abc','cs','2014-05-18');
+insert into STUDENT values(502,'bcd','is','2001-06-20');
+insert into STUDENT values(503,'cde','ec','2005-01-08');
+insert into STUDENT values(504,'def','mt','2000-02-13');
+insert into STUDENT values(505,'efg','cs','2014-05-18');
+
+insert into COURSE values(100,'DBMS','cs');
+insert into COURSE values(200,'SE','cs');
+insert into COURSE values(300,'ATC','cv');
+insert into COURSE values(400,'OS','is');
+insert into COURSE values(500,'DAA','cs');
+
+insert into TEXT_BOOK values(1001,'hij','xx','xa');
+insert into TEXT_BOOK values(1002,'ijk','yy','xb');
+insert into TEXT_BOOK values(1003,'jkl','zz','xc');
+insert into TEXT_BOOK values(1004,'klm','aa','xd');
+insert into TEXT_BOOK values(1005,'lmn','bb','xe');
+
+insert into BOOK_ADOPTION values(200,5,1002);
+insert into BOOK_ADOPTION values(400,3,1004);
+insert into BOOK_ADOPTION values(100,2,1002);
+insert into BOOK_ADOPTION values(300,1,1005);
+insert into BOOK_ADOPTION values(400,4,1004);
+
+insert into ENROLL values(503,500,1,'A');
+insert into ENROLL values(501,200,4,'C');
+insert into ENROLL values(504,400,1,'B');
+insert into ENROLL values(505,500,5,'D');
+insert into ENROLL values(503,300,1,'A');
