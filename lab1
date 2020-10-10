@@ -46,9 +46,9 @@ Query1:
 Select BOOK.Book_id,Title,Publisher_name,Author_name,No_of_copies from BOOK,BOOK_AUTHORS,BOOK_COPIES where BOOK.Book_id=BOOK_AUTHORS.Book_id  and   BOOK.Book_id=BOOK_COPIES.Book_id  ;
 
 Results:
-Book_id	Title	Publisher_name	Author_name	No_of_copies
-10	DBMS	Mcgraw	Andrew	20
-10	DBMS	Mcgraw	Andrew	5
-20	SE	Person	Raj Kumar	15
-30	FLAT	SAM Pub	Samual	30
-40	BDA	IOP	Padma	7
+Book_id	 Title	Publisher_name	Author_name	No_of_copies
+10	 DBMS	Mcgraw		Andrew		20
+10	 DBMS	Mcgraw		Andrew		5
+20	 SE	Person		Raj Kumar	15
+30	 FLAT	SAM Pub		Samual		30
+40	 BDA	IOP		Padma		7
