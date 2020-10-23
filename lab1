@@ -50,12 +50,11 @@ Select B.Book_id,Title,Publisher_name,Author_name,Branch_id,No_of_Copies From BO
 
 RESULTS
 Book_id	Title	Publisher_name	Author_name	Branch_id	No_of_Copies
-10	DBMS	Mcgraw	         Andrew	                 100	     20
-10	DBMS	Mcgraw	         Andrew                  200          5
-20	SE	Person	         Raj Kumar	         300	     15
-30	FLAT	SAM Pub	         Samual	                 100	     30
-40	BDA	IOP	          Padma	                 500	      7
-
+10	DBMS	Mcgraw	         Andrew	            100	             20
+10	DBMS	Mcgraw	         Andrew             200               5
+20	SE	Person	         Raj Kumar	    300	             15
+30	FLAT	SAM Pub	         Samual	            100	             30
+40	BDA	IOP	          Padma	            500	              7
 
 2nd query:
 Select Card_no From BOOK_LENDING where Date_out between '2017-01-01' and '2017-06-01' group by Card_no having count(Card_no)>3;
@@ -91,7 +90,7 @@ Book_id	 Branch_id	No_of_copies
 10	 100	         20
 10	 200	         5
 30	 100	         30
-40	 500            	 7
+40	 500             7
 Query #5 Execution time: 0ms
 Book_id	  Branch_id	Card_no	  Date_out	Due_date
 10        100	          201	  2017-06-15	2020-06-25
