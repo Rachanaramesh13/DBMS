@@ -100,3 +100,19 @@ Book_id	  Branch_id	Card_no	  Date_out	Due_date
 40	  400	          204	  2017-08-14	2020-08-26
 50	  500	          202	  2017-04-10	2017-04-20
 50	  500	          205	  2017-09-01	2020-09-10
+
+
+5th Query 
+Create view v1 as Select Title,B.Book_id,sum(No_of_copies) from BOOK B,BOOK_COPIES BC where B.Book_id=BC.Book_id group by Book_id,title;
+select * from v1;
+
+Result
+Query #1 Execution time: 1ms
+There are no results to be displayed.
+Query #2 Execution time: 0ms
+Title	Book_id	 sum(No_of_copies)
+DBMS	 10	   25
+SE	 20	   15
+FLAT	 30	   30
+BDA	 40	    7
+
